@@ -1,4 +1,12 @@
-import { Box, Button, Heading, HStack, VStack, Text, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  VStack,
+  Text,
+  Input,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { NextPage } from "next";
 const NavBar = (): JSX.Element => {
@@ -9,7 +17,7 @@ const NavBar = (): JSX.Element => {
       py={7}
       position={"sticky"}
       top={"0"}
-        zIndex={"100"}
+      zIndex={"100"}
       fontFamily={"Cabin"}
     >
       <HStack px={"5%"} justifyContent={"space-between"}>
@@ -54,90 +62,97 @@ const NavBar = (): JSX.Element => {
 };
 
 const Home: NextPage = () => {
-   const fileInputRef = React.createRef<HTMLInputElement>();
-    const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = React.createRef<HTMLInputElement>();
+  const [file, setFile] = useState<File | null>(null);
 
-    const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFile(e.target.files?.[0] || null);
-    };
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFile(e.target.files?.[0] || null);
+  };
 
-    const handleUpload = async () => {
-      if (!file) return;
+  const handleUpload = async () => {
+    if (!file) return;
 
-      const formData = new FormData();
-      formData.append("file", file!);
+    const formData = new FormData();
+    formData.append("file", file!);
 
-      fetch("http://127.0.0.1:5000/summarize", {
-            method: "POST",
-            body: formData,
-          }
-      ).then((response) => {
-        console.log(response);
-        setFile(response)
-      });
-    };
+    fetch("http://127.0.0.1:5000/summarize", {
+      method: "POST",
+      body: formData,
+    }).then((response) => {
+      console.log(response);
+      setFile(response);
+    });
+  };
 
-    return (
-        <Box>
-          <NavBar />
-          <HStack justifyContent="space-between" paddingLeft="5%" mt={20} color={"#2C344C"}>
-            <VStack alignItems="flex-start" spacing={0}>
-              <Heading fontFamily="Cabin" fontSize="60px">
-                Simplifying
-              </Heading>
-              <Heading fontFamily="Cabin" fontSize="60px">
-                Complex Legislation
-              </Heading>
-              <Text
-                  fontFamily="Cabin"
-                  fontSize="20px"
-                  paddingTop="10px"
-                  paddingBottom="40px"
-              >
-                “Making sense of the legal jargon, one summary at a time.”
-              </Text>
-              <Input
-                  type="file"
-                  style={{ display: "none" }}
-                  onChange={handleFile}
-                  ref={fileInputRef}
-              />
-              <div style={{ display: "flex", alignItems: "center" }}>
-              <Button
-                  style={{
-                    width: "200px",
-                    height: "50px",
-                    border: "1px solid #EECC6E",
-                    borderRadius: "25px",
-                    fontFamily: "Cabin",
-                    fontSize: "18px",
-                    color: "#2C344C",
-                    zIndex: "01",
-                    backgroundColor: "#EECC6E",
-                  }}
-                  onClick={() => fileInputRef.current?.click()}
-              >
-                <a id={"about-us"}>Upload</a>
-              </Button>
-              <Button
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    marginLeft: "-60px",
-                    border: "1px solid #EECC6E",
-                    borderRadius: "25px",
-                    fontFamily: "Cabin",
-                    fontSize: "18px",
-                    color: "#2C344C",
-                    zIndex: "01",
-                    backgroundColor: "#EECC6E",
-                  }}
-                  onClick={handleUpload}
-              >
-                ✓
-              </Button>
-                </div>
-            </VStack>
+  return (
+    <Box>
+      <NavBar />
+      <HStack
+        justifyContent="space-between"
+        paddingLeft="5%"
+        mt={20}
+        color={"#2C344C"}
+      >
+        <VStack alignItems="flex-start" spacing={0}>
+          <Heading fontFamily="Cabin" fontSize="60px">
+            Simplifying
+          </Heading>
+          <Heading fontFamily="Cabin" fontSize="60px">
+            Complex Legislation
+          </Heading>
+          <Text
+            fontFamily="Cabin"
+            fontSize="20px"
+            paddingTop="10px"
+            paddingBottom="40px"
+          >
+            “Making sense of the legal jargon, one summary at a time.”
+          </Text>
+          <Input
+            type="file"
+            style={{ display: "none" }}
+            onChange={handleFile}
+            ref={fileInputRef}
+          />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Button
+              style={{
+                width: "200px",
+                height: "50px",
+                border: "1px solid #EECC6E",
+                borderRadius: "25px",
+                fontFamily: "Cabin",
+                fontSize: "18px",
+                color: "#2C344C",
+                zIndex: "01",
+                backgroundColor: "#EECC6E",
+              }}
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <a id={"about-us"}>Upload</a>
+            </Button>
+            <Button
+              style={{
+                width: "50px",
+                height: "50px",
+                marginLeft: "-60px",
+                border: "1px solid #EECC6E",
+                borderRadius: "25px",
+                fontFamily: "Cabin",
+                fontSize: "18px",
+                color: "#2C344C",
+                zIndex: "01",
+                backgroundColor: "#EECC6E",
+              }}
+              onClick={() => {
+                handleUpload;
+                window.open("http://localhost:3000/texteditor", "_blank");
+              }}
+            >
+              ✓
+            </Button>
+          </div>
+        </VStack>
         <VStack justifyContent={"center"}>
           <svg
             width={"684"}
