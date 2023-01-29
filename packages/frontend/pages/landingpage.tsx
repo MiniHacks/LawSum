@@ -364,7 +364,7 @@ const Home: NextPage = () => {
 
       <HStack
         w={"100%"}
-        h={"600px"}
+        h={"450px"}
         bg={"white"}
         color={"#2C344C"}
         justifyContent={"center"}
@@ -392,6 +392,8 @@ const Home: NextPage = () => {
           </Text>
           <Button
             paddingX={"50px"}
+            fontFamily={"Cabin"}
+            fontSize={"20px"}
             justifyContent={"left"}
             colorScheme={"yellow"}
             borderRadius={"25px"}

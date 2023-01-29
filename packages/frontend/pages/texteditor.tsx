@@ -80,8 +80,10 @@ const TextEditor: NextPage = () => {
               size={"lg"}
               bg={"#FFFFFF"}
               borderRadius={"10px"}
-              w={"600px"}
-              h={"500px"}
+              maxW={"600px"}
+              maxH={"500px"}
+              minW={"600px"}
+              minH={"600px"}
               padding={"20px"}
             ></Textarea>
           </HStack>
