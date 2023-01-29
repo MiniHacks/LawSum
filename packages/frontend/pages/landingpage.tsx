@@ -426,10 +426,11 @@ const Home: NextPage = () => {
         <VStack alignItems={"center"} justifyContent={"left"}>
           <Text fontSize={"35px"}>Made for MinneHack 2023</Text>
           <Text>
-            Hacked together by Brandon, Ansh, Stuti, and Brandon. We all study
+              Hacked together by <a href = "https://brandonlam.dev">Brandon</a>, <a href = "https://anshpa.tel">Ansh</a>, <a href = "https://iamstuti.com">Stuti</a>, and <a href = "https://github.com/cobalt1164"> Brandon</a>. We all study
             at the University of Minnesota, Twin Cities.
           </Text>
-          <Text>Star us on Github and like us on Devpost.</Text>
+          <Text>Star us on <a href = "https://github.com/brandon-nguyen-lam/LegaSum">Github</a> and like us on <a href = "https://devpost.com/software/temp-u5mn2p?ref_content=user-portfolio&ref_feature=in_progress">Devpost.</a>
+          </Text>
         </VStack>
       </HStack>
     </Box>
