@@ -60,10 +60,24 @@ const Home: NextPage = () => {
   };
 
   const handleSubmit = async () => {
-    if (!file) return;
+    if (!file) {
+      console.error("No file selected");
+      return;
+    }
     // perform your upload logic here with the file
     const formData = new FormData();
     formData.append("file", file!);
+
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <Box>
