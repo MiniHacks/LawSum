@@ -12,14 +12,7 @@ import { NextPage } from "next";
 
 export const NavBar = (): JSX.Element => {
   return (
-    <Box
-      bg={"white"}
-      color={"#2C344C"}
-      py={7}
-      position={"sticky"}
-      top={"0"}
-      fontFamily={"Cabin"}
-    >
+    <Box bg={"white"} color={"#2C344C"} py={7} top={"0"} fontFamily={"Cabin"}>
       <HStack px={"5%"} justifyContent={"space-between"}>
         <Heading
           fontFamily={"Cabin"}
@@ -83,30 +76,36 @@ const TextEditor: NextPage = () => {
         <VStack spacing={"40px"}>
           <HStack spacing={"40px"}>
             <Textarea
-              placeholder={"Enter your legal document text here"}
-              size={"lg"}
-              bg={"#FFFFFF"}
-              borderRadius={"10px"}
-              w={"600px"}
-              h={"500px"}
-              padding={"20px"}
-            ></Textarea>
-
-            <Textarea
               placeholder={"This is where the AI-generated summary will appear"}
               size={"lg"}
               bg={"#FFFFFF"}
               borderRadius={"10px"}
-              w={"600px"}
-              h={"500px"}
+              maxW={"600px"}
+              maxH={"500px"}
+              minW={"600px"}
+              minH={"600px"}
               padding={"20px"}
             ></Textarea>
           </HStack>
-          <Box w={"100%"}>
-            <Button bg={"#EECC6E"} paddingTop={"20px"} paddingBottom={"20px"}>
-              Summarize
-            </Button>
-          </Box>
+        </VStack>
+      </HStack>
+
+      <HStack
+        w={"100%"}
+        h={"200"}
+        bg={"#FFFFFF"}
+        color={"#2C344C"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        fontFamily={"Cabin"}
+      >
+        <VStack alignItems={"center"} justifyContent={"left"}>
+          <Text fontSize={"35px"}>Made for MinneHack 2023</Text>
+          <Text>
+            Hacked together by Brandon, Ansh, Stuti, and Brandon. We all study
+            at the University of Minnesota, Twin Cities.
+          </Text>
+          <Text>Star us on Github and like us on Devpost.</Text>
         </VStack>
       </HStack>
     </Box>
