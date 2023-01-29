@@ -45,7 +45,6 @@ const NavBar = (): JSX.Element => {
             <a href={"#about-us"}>About Us</a>
           </Button>
           <Button
-            variant={"ghost"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             borderRadius={"25px"}
