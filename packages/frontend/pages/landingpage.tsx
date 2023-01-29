@@ -69,12 +69,12 @@ const Home: NextPage = () => {
   const [file, setFile] = useState<File | null>(null);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+      console.log("onclick")
     setFile(e.target.files?.[0] || null);
   };
 
   const handleUpload = async () => {
     if (!file) return;
-
     const formData = new FormData();
     formData.append("file", file!);
 
@@ -87,6 +87,11 @@ const Home: NextPage = () => {
           .then((response) => {
             console.log(response);
             router.push("/texteditor")
+              if (typeof window !== 'undefined') {
+
+                  localStorage.setItem("summary", response)
+              }
+
           });
     };
 
@@ -150,10 +155,7 @@ const Home: NextPage = () => {
                 zIndex: "01",
                 backgroundColor: "#EECC6E",
               }}
-              onClick={() => {
-                handleUpload;
-                window.open("http://localhost:3000/texteditor", "_blank");
-              }}
+              onClick={handleUpload}
             >
               ✓
             </Button>
