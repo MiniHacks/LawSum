@@ -19,7 +19,7 @@ export const NavBar = (): JSX.Element => {
           fontSize={"45px"}
           onClick={() => window.open("http://localhost:3000/landingpage")}
         >
-          LegaSum
+          LawSum
         </Heading>
         <HStack>
           <Button
@@ -76,7 +76,11 @@ const TextEditor: NextPage = () => {
         <VStack spacing={"40px"}>
           <HStack spacing={"40px"}>
             <Textarea
-              placeholder={(typeof window !== 'undefined' ? localStorage.getItem("summary") : 0) || "This is where the AI-generated summary will appear"}
+              placeholder={
+                (typeof window !== "undefined"
+                  ? localStorage.getItem("summary")
+                  : 0) || "This is where the AI-generated summary will appear"
+              }
               size={"lg"}
               bg={"#FFFFFF"}
               borderRadius={"10px"}
