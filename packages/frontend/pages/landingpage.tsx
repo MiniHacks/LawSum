@@ -1,6 +1,7 @@
-import { Box, Button, Heading, HStack, VStack, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Button, Heading, HStack, VStack, Text, Input } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { NextPage } from "next";
+
 
 const NavBar = (): JSX.Element => {
   return (
@@ -54,6 +55,33 @@ const NavBar = (): JSX.Element => {
 };
 
 const Home: NextPage = () => {
+    const [file, setFile] = useState<File | null>(null);
+
+    const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setFile(event.target.files?.[0]);
+    };
+
+    const handleSubmit = async () => {
+      if (!file) {
+        console.error("No file selected");
+        return;
+      }
+      // perform your upload logic here with the file
+      const formData = new FormData();
+      formData.append("file", file!);
+
+      try {
+        const response = await fetch("/api/upload", {
+          method: "POST",
+          body: formData
+        });
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
   return (
     <Box>
       <NavBar />
@@ -73,18 +101,21 @@ const Home: NextPage = () => {
           >
             “Making sense of the legal jargon, one summary at a time.”
           </Text>
-          <Button
-            fontFamily={"Cabin"}
-            fontSize={"18px"}
-            borderRadius={"25px"}
-            backgroundColor={"#EECC6E"}
-            color={"#2C344C"}
-            py={4}
-            px={10}
-            zIndex={"-1"}
-          >
-            <a id={"about-us"}>Upload</a>
-          </Button>
+          <Input
+              type="file"
+              onChange={handleFileUpload}
+              appearance="none"
+              width="200px"
+              height="50px"
+              border="1px solid #EECC6E"
+              borderRadius="25px"
+              padding="0.5rem"
+              fontFamily="Cabin"
+              fontSize="18px"
+              color="#2C344C"
+              backgroundColor="#EECC6E"
+          />
+          <Button onClick={handleSubmit}>Submit</Button>
         </VStack>
         <VStack justifyContent={"center"}>
           <svg
