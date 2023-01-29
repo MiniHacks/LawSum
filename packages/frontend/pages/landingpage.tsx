@@ -1,5 +1,6 @@
 import { Box, Button, Heading, HStack, VStack, Text, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { NextPage } from "next";
 const NavBar = (): JSX.Element => {
   return (
@@ -56,6 +57,8 @@ const NavBar = (): JSX.Element => {
 const Home: NextPage = () => {
    const fileInputRef = React.createRef<HTMLInputElement>();
     const [file, setFile] = useState<File | null>(null);
+    const router = useRouter()
+    const [route, setRoute] = useState()
 
     const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
       setFile(e.target.files?.[0] || null);
@@ -71,10 +74,12 @@ const Home: NextPage = () => {
             method: "POST",
             body: formData,
           }
-      ).then((response) => {
-        console.log(response);
-        setFile(response)
-      });
+      )
+          .then((response) => response.text())
+          .then((response) => {
+            console.log(response);
+            router.push("/texteditor")
+          });
     };
 
     return (
