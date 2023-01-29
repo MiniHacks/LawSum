@@ -23,7 +23,7 @@ const NavBar = (): JSX.Element => {
     >
       <HStack px={"5%"} justifyContent={"space-between"}>
         <Heading fontFamily={"Cabin"} fontSize={"45px"}>
-          <a href={"#home"}>LegaSum</a>
+          <a href={"#home"}>LawSum</a>
         </Heading>
         <HStack>
           <Button
@@ -63,13 +63,13 @@ const NavBar = (): JSX.Element => {
 };
 
 const Home: NextPage = () => {
-    const router = useRouter()
-    const [route, setRoute] = useState()
+  const router = useRouter();
+  const [route, setRoute] = useState();
   const fileInputRef = React.createRef<HTMLInputElement>();
   const [file, setFile] = useState<File | null>(null);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("onclick")
+    console.log("onclick");
     setFile(e.target.files?.[0] || null);
   };
 
@@ -78,22 +78,19 @@ const Home: NextPage = () => {
     const formData = new FormData();
     formData.append("file", file!);
 
-      fetch("http://127.0.0.1:5000/summarize", {
-            method: "POST",
-            body: formData,
-          }
-      )
-          .then((response) => response.text())
-          .then((response) => {
-            console.log(response);
-            router.push("/texteditor")
-              if (typeof window !== 'undefined') {
-
-                  localStorage.setItem("summary", response)
-              }
-
-          });
-    };
+    fetch("http://127.0.0.1:5000/summarize", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((response) => {
+        console.log(response);
+        router.push("/texteditor");
+        if (typeof window !== "undefined") {
+          localStorage.setItem("summary", response);
+        }
+      });
+  };
 
   return (
     <Box>
