@@ -1,15 +1,13 @@
-// import { NextPage } from "next";
-// import { useSession } from "next-auth/react";
 import { Box, Button, Heading, HStack, VStack, Text } from "@chakra-ui/react";
 
 import React from "react";
-// import PageLayout from "../components/Layout/PageLayout";
+import {HeadersContext} from "next/dist/client/components/hooks-server-context";
 
 const NavBar = (): JSX.Element => {
   return (
-    <Box color={"#2C344C"} py={7} position={"sticky"} top={"0"}>
+    <Box color={"#2C344C"} py={7} position={"sticky"} top={"0"} fontFamily={"Cabin"}>
       <HStack px={"5%"} justifyContent={"space-between"}>
-        <Heading fontSize={"45px"}>LegaSum</Heading>
+        <Heading fontFamily={"Cabin"} fontSize={"45px"}>LegaSum</Heading>
         <HStack>
           <Button
             fontSize={"18px"}
@@ -37,25 +35,22 @@ const NavBar = (): JSX.Element => {
           </Button>
         </HStack>
       </HStack>
+
       <HStack justifyContent={"space-between"} paddingLeft={"5%"} mt={20}>
         <VStack alignItems={"flex-start"} spacing={0}>
           <Heading fontSize={"60px"}>Simplifying</Heading>
           <Heading fontSize={"60px"}>Complex Legislation</Heading>
-          <Text
-              fontSize={"20px"}
-              paddingTop={"10px"}
-              paddingBottom={"40px"}
-          >
+          <Text fontSize={"20px"} paddingTop={"10px"} paddingBottom={"40px"}>
             “Making sense of the legal jargon, one summary at a time.”
           </Text>
           <Button
-              py={"25px"}
-              px={"40px"}
+            py={"25px"}
+            px={"40px"}
             fontSize={"20px"}
             borderRadius={"25px"}
             backgroundColor={"#EECC6E"}
             color={"#2C344C"}
-            >
+          >
             Upload
           </Button>
         </VStack>
@@ -82,7 +77,7 @@ const NavBar = (): JSX.Element => {
               />
               <path
                 d={
-                  "M332 664C515.359 664 664 515.359 664 332C664 148.641 515.359 0 332 0C148.641 0 0 148.641 0 332C0 515.359 148.641 664 332 664Z"
+                  "M331 662C514.359 662 663 513.359 663 330C663 146.641 514.359 -2 331 -2C147.641 -2 -1 146.641 -1 330C-1 513.359 147.641 662 331 662Z"
                 }
                 fill={"#2C344C"}
               />
@@ -106,6 +101,82 @@ const NavBar = (): JSX.Element => {
                   stroke={"black"}
                 />
               </g>
+              <path
+                fillRule={"evenodd"}
+                clipRule={"evenodd"}
+                d={
+                  "M391.969 189.312L391.238 189.943L446.686 248.8L447.128 248.419V424C447.128 437.807 435.935 449 422.128 449H245C231.193 449 220 437.807 220 424V214.312C220 200.505 231.193 189.312 245 189.312H391.969Z"
+                }
+                fill={"white"}
+              />
+              <rect
+                x={"248.54"}
+                y={"223.632"}
+                width={"96.3213"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"252.232"}
+                width={"96.3213"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"284.264"}
+                width={"168.86"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"317.44"}
+                width={"168.86"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"346.04"}
+                width={"168.86"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"374.64"}
+                width={"168.86"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <rect
+                x={"248.54"}
+                y={"403.24"}
+                width={"168.86"}
+                height={"12.584"}
+                rx={"6.292"}
+                fill={"#2C344C"}
+              />
+              <path
+                d={
+                  "M373.085 269.925C369.715 269.914 366.978 267.28 366.967 264.036L366.676 178.355C366.658 172.959 373.564 170.414 377.324 174.43L457.773 260.364C461.326 264.159 458.541 270.194 453.243 270.177L373.085 269.925Z"
+                }
+                fill={"#2C344C"}
+              />
+              <path
+                d={
+                  "M384.753 259.501C381.345 259.516 378.571 256.846 378.586 253.566L378.889 190.758C378.915 185.386 385.793 182.881 389.537 186.88L448.09 249.426C451.628 253.205 448.883 259.215 443.608 259.239L384.753 259.501Z"
+                }
+                fill={"white"}
+              />
             </g>
             <defs>
               <filter
@@ -149,6 +220,22 @@ const NavBar = (): JSX.Element => {
             </defs>
           </svg>
         </VStack>
+      </HStack>
+
+      <HStack
+          marginTop={"100px"}
+        w={"100%"}
+        h={"600px"}
+        bg={"#2C344C"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        >
+        <VStack>
+          <Heading marginTop= {"-100px"} marginBottom={"30px"}color={"white"} fontSize={"55px"}>About Us</Heading>
+          <Text color={"white"} px={"25%"} fontSize={"30px"}>We simplify complex legislation documents to make them easy to understand. Our team of experts provide clear summaries to keep you informed. We strive to bring transparency to the legal system for all.
+            Try our user-friendly tool today and stay informed!
+          </Text>
+          </VStack>
       </HStack>
     </Box>
   );
