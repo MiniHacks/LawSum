@@ -11,6 +11,7 @@
     "start": "yarn env-cmd yarn workspaces foreach -pi run start"
   },
   "devDependencies": {
+    "@types/formidable": "^2.0.5",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "env-cmd": "^10.1.0",
@@ -25,6 +26,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "formidable": "^2.1.1",
     "nodemon": "^2.0.19",
     "prettier": "^2.5.1"
   }
