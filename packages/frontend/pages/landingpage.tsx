@@ -78,7 +78,6 @@ const Home: NextPage = () => {
     const formData = new FormData();
     formData.append("file", file!);
 
-<<<<<<< HEAD
       fetch("http://127.0.0.1:5000/summarize", {
             method: "POST",
             body: formData,
@@ -90,16 +89,6 @@ const Home: NextPage = () => {
             router.push("/texteditor")
           });
     };
-=======
-    fetch("http://127.0.0.1:5000/summarize", {
-      method: "POST",
-      body: formData,
-    }).then((response) => {
-      console.log(response);
-      setFile(response);
-    });
-  };
->>>>>>> refs/remotes/origin/main
 
   return (
     <Box>
