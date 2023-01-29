@@ -63,15 +63,10 @@ const NavBar = (): JSX.Element => {
 };
 
 const Home: NextPage = () => {
-<<<<<<< HEAD
-   const fileInputRef = React.createRef<HTMLInputElement>();
-    const [file, setFile] = useState<File | null>(null);
     const router = useRouter()
     const [route, setRoute] = useState()
-=======
   const fileInputRef = React.createRef<HTMLInputElement>();
   const [file, setFile] = useState<File | null>(null);
->>>>>>> refs/remotes/origin/main
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files?.[0] || null);
