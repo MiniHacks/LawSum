@@ -9,7 +9,6 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
-# openai.api_key = "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"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route("/summarize", methods=["GET", "POST"])
