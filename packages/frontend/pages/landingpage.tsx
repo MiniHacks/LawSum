@@ -11,7 +11,7 @@ const NavBar = (): JSX.Element => {
     >
       <HStack px={"5%"} justifyContent={"space-between"}>
         <Heading fontFamily={"Cabin"} fontSize={"45px"}>
-          LegaSum
+          <a href={"#home"}>LegaSum</a>
         </Heading>
         <HStack>
           <Button
@@ -19,18 +19,16 @@ const NavBar = (): JSX.Element => {
             fontSize={"18px"}
             colorScheme={"white"}
             color={"#2C344C"}
-            onClick={() => window.open("http://localhost:3000/AboutUs")}
           >
-            Home
+            <a href={"#home"}>Home</a>
           </Button>
           <Button
             fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
             color={"#2C344C"}
-            onClick={() => window.open("http://localhost:3000/MailingList")}
           >
-            About Us
+            <a href={"#about-us"}>About Us</a>
           </Button>
           <Button
             fontFamily={"Cabin"}
@@ -262,19 +260,21 @@ const NavBar = (): JSX.Element => {
             px={"20%"}
             fontSize={"26px"}
           >
-            We simplify complex legislation documents to make them easy to
-            understand. Our goal is to{" "}
-            <span style={{ color: "#EECC6E" }}>bring transparency</span> to the
-            legal system for all and{" "}
-            <span style={{ color: "#EECC6E" }}>empower individuals</span> to
-            stay informed and engaged with the laws that affect them. Whether
-            you're a busy professional, a concerned citizen, or a student of the
-            law, our{" "}
-            <span style={{ color: "#EECC6E" }}>user-friendly tool </span>
-            is the perfect resource for staying{" "}
-            <span style={{ color: "#EECC6E" }}>up-to-date</span> on the latest
-            legislation. Take the first step towards becoming a more informed
-            and engaged citizen, and try our tool today!
+            <a id={"about-us"}>
+              We simplify complex legislation documents to make them easy to
+              understand. Our goal is to{" "}
+              <span style={{ color: "#EECC6E" }}>bring transparency</span> to
+              the legal system for all and{" "}
+              <span style={{ color: "#EECC6E" }}>empower individuals</span> to
+              stay informed and engaged with the laws that affect them. Whether
+              you're a busy professional, a concerned citizen, or a student of
+              the law, our{" "}
+              <span style={{ color: "#EECC6E" }}>user-friendly tool </span>
+              is the perfect resource for staying{" "}
+              <span style={{ color: "#EECC6E" }}>up-to-date</span> on the latest
+              legislation. Take the first step towards becoming a more informed
+              and engaged citizen, and try our tool today!
+            </a>
           </Text>
         </VStack>
       </HStack>
