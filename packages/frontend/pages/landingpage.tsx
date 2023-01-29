@@ -1,8 +1,5 @@
 import { Box, Button, Heading, HStack, VStack, Text } from "@chakra-ui/react";
-
 import React from "react";
-import { HeadersContext } from "next/dist/client/components/hooks-server-context";
-
 const NavBar = (): JSX.Element => {
   return (
     <Box
@@ -65,9 +62,7 @@ const NavBar = (): JSX.Element => {
           </Text>
           <Button
             fontFamily={"Cabin"}
-            py={"25px"}
-            px={"40px"}
-            fontSize={"20px"}
+            fontSize={"18px"}
             borderRadius={"25px"}
             backgroundColor={"#EECC6E"}
             color={"#2C344C"}
@@ -264,13 +259,22 @@ const NavBar = (): JSX.Element => {
           <Text
             fontFamily={"Cabin"}
             color={"white"}
-            px={"25%"}
-            fontSize={"30px"}
+            px={"20%"}
+            fontSize={"26px"}
           >
             We simplify complex legislation documents to make them easy to
-            understand. Our team of experts provide clear summaries to keep you
-            informed. We strive to bring transparency to the legal system for
-            all. Try our user-friendly tool today and stay informed!
+            understand. Our goal is to{" "}
+            <span style={{ color: "#EECC6E" }}>bring transparency</span> to the
+            legal system for all and{" "}
+            <span style={{ color: "#EECC6E" }}>empower individuals</span> to
+            stay informed and engaged with the laws that affect them. Whether
+            you're a busy professional, a concerned citizen, or a student of the
+            law, our{" "}
+            <span style={{ color: "#EECC6E" }}>user-friendly tool </span>
+            is the perfect resource for staying{" "}
+            <span style={{ color: "#EECC6E" }}>up-to-date</span> on the latest
+            legislation. Take the first step towards becoming a more informed
+            and engaged citizen, and try our tool today!
           </Text>
         </VStack>
       </HStack>
