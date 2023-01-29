@@ -1,8 +1,11 @@
 import { Box, Button, Heading, HStack, VStack, Text } from "@chakra-ui/react";
 import React from "react";
+import { NextPage } from "next";
+
 const NavBar = (): JSX.Element => {
   return (
     <Box
+      bg={"white"}
       color={"#2C344C"}
       py={7}
       position={"sticky"}
@@ -15,6 +18,7 @@ const NavBar = (): JSX.Element => {
         </Heading>
         <HStack>
           <Button
+            variant={"solid"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
@@ -23,6 +27,7 @@ const NavBar = (): JSX.Element => {
             <a href={"#home"}>Home</a>
           </Button>
           <Button
+            variant={"solid"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
@@ -31,17 +36,27 @@ const NavBar = (): JSX.Element => {
             <a href={"#about-us"}>About Us</a>
           </Button>
           <Button
+            variant={"ghost"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             borderRadius={"25px"}
             backgroundColor={"#EECC6E"}
             color={"#2C344C"}
+            colorScheme={"yellow"}
+            variant={"solid"}
           >
-            Mailing List
+            <a href={"#mailing-list"}>Mailing List</a>
           </Button>
         </HStack>
       </HStack>
+    </Box>
+  );
+};
 
+const Home: NextPage = () => {
+  return (
+    <Box>
+      <NavBar />
       <HStack justifyContent={"space-between"} paddingLeft={"5%"} mt={20}>
         <VStack alignItems={"flex-start"} spacing={0}>
           <Heading fontFamily={"Cabin"} fontSize={"60px"}>
@@ -64,8 +79,11 @@ const NavBar = (): JSX.Element => {
             borderRadius={"25px"}
             backgroundColor={"#EECC6E"}
             color={"#2C344C"}
+            py={4}
+            px={10}
+            zIndex={"-1"}
           >
-            Upload
+            <a id={"about-us"}>Upload</a>
           </Button>
         </VStack>
         <VStack justifyContent={"center"}>
@@ -260,26 +278,84 @@ const NavBar = (): JSX.Element => {
             px={"20%"}
             fontSize={"26px"}
           >
-            <a id={"about-us"}>
-              We simplify complex legislation documents to make them easy to
-              understand. Our goal is to{" "}
-              <span style={{ color: "#EECC6E" }}>bring transparency</span> to
-              the legal system for all and{" "}
-              <span style={{ color: "#EECC6E" }}>empower individuals</span> to
-              stay informed and engaged with the laws that affect them. Whether
-              you're a busy professional, a concerned citizen, or a student of
-              the law, our{" "}
-              <span style={{ color: "#EECC6E" }}>user-friendly tool </span>
-              is the perfect resource for staying{" "}
-              <span style={{ color: "#EECC6E" }}>up-to-date</span> on the latest
-              legislation. Take the first step towards becoming a more informed
-              and engaged citizen, and try our tool today!
-            </a>
+            We simplify complex legislation documents to make them easy to
+            understand. Our goal is to{" "}
+            <span style={{ color: "#EECC6E" }}>bring transparency</span> to the
+            the legal system for all and{" "}
+            <span style={{ color: "#EECC6E" }}>empower individuals</span> to
+            stay informed and engaged with the laws that affect them. Whether
+            you're a busy professional, a concerned citizen, or a student of the
+            law, our{" "}
+            <span style={{ color: "#EECC6E" }}>user-friendly tool </span>
+            is the perfect resource for staying{" "}
+            <span style={{ color: "#EECC6E" }}>up-to-date</span> on the latest
+            legislation. Take the first step towards becoming a more informed
+            and engaged citizen, and try our tool today!
           </Text>
+        </VStack>
+      </HStack>
+
+      <HStack
+        w={"100%"}
+        h={"600px"}
+        bg={"white"}
+        color={"#2C344C"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <VStack>
+          <Heading
+            fontFamily={"Cabin"}
+            marginTop={"-100px"}
+            marginBottom={"30px"}
+            color={"2#C344C"}
+            fontSize={"55px"}
+          >
+            <a id={"mailing-list"}>Mailing List </a>
+          </Heading>
+          <Text
+            fontFamily={"Cabin"}
+            color={"#2C344C"}
+            px={"20%"}
+            fontSize={"26px"}
+            paddingBottom={"20px"}
+          >
+            Sign up for our mailing list to receive updates on new legislation
+            and other news! click the button below to sign up!
+          </Text>
+          <Button
+            paddingX={"50px"}
+            justifyContent={"left"}
+            colorScheme={"yellow"}
+            borderRadius={"25px"}
+            onClick={() => {
+              alert("Coming Soon!");
+            }}
+          >
+            Sign Up
+          </Button>
+        </VStack>
+      </HStack>
+
+      <HStack
+        w={"100%"}
+        h={"200"}
+        bg={"#2C344C"}
+        color={"white"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <VStack alignItems={"center"} justifyContent={"left"}>
+          <Text fontSize={"35px"}>Made for MinneHack 2023</Text>
+          <Text>
+            Hacked together by Brandon, Ansh, Stuti, and Brandon. We all study
+            at the University of Minnesota, Twin Cities.
+          </Text>
+          <Text>Star us on Github and like us on Devpost.</Text>
         </VStack>
       </HStack>
     </Box>
   );
 };
 
-export default NavBar;
+export default Home;
