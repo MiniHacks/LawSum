@@ -27,7 +27,6 @@ const NavBar = (): JSX.Element => {
         </Heading>
         <HStack>
           <Button
-            variant={"solid"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
@@ -36,7 +35,6 @@ const NavBar = (): JSX.Element => {
             <a href={"#home"}>Home</a>
           </Button>
           <Button
-            variant={"solid"}
             fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
