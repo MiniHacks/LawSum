@@ -1,5 +1,5 @@
 import { Box, Button, Heading, HStack, VStack, Text, Input } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { NextPage } from "next";
 const NavBar = (): JSX.Element => {
   return (
@@ -68,18 +68,30 @@ const Home: NextPage = () => {
     const formData = new FormData();
     formData.append("file", file!);
 
-    try {
-      const response = await fetch("/api/upload", {
+    fetch("http://127.0.0.1:5000/summarize", {
         method: "POST",
-        body: formData
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
+        body: formData,
     }
-  };
+    ).then((response) => {
+        console.log(response);
+        setFile(response)
+    });
+    };
+
+
+    // useEffect(() => {
+    //   fetch("/summarize").then(
+    //       res => res.json()
+    //   ).then(
+    //       file => {
+    //         setFile(file);
+    //         console.log(file)
+    //       }
+    //   )
+    // }, []);
+  // };
   return (
+
     <Box>
       <NavBar />
       <HStack justifyContent={"space-between"} paddingLeft={"5%"} mt={20}>
