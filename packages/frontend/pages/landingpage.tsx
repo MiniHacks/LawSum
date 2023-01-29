@@ -65,23 +65,16 @@ const Home: NextPage = () => {
       if (!file) return;
 
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append("file", file!);
 
-      try {
-        const response = await fetch("/api/upload", {
-          method: "POST",
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error(`${response.status} - ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
+      fetch("http://127.0.0.1:5000/summarize", {
+            method: "POST",
+            body: formData,
+          }
+      ).then((response) => {
+        console.log(response);
+        setFile(response)
+      });
     };
 
     return (
