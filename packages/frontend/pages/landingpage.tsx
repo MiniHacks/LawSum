@@ -1,15 +1,24 @@
 import { Box, Button, Heading, HStack, VStack, Text } from "@chakra-ui/react";
 
 import React from "react";
-import {HeadersContext} from "next/dist/client/components/hooks-server-context";
+import { HeadersContext } from "next/dist/client/components/hooks-server-context";
 
 const NavBar = (): JSX.Element => {
   return (
-    <Box color={"#2C344C"} py={7} position={"sticky"} top={"0"} fontFamily={"Cabin"}>
+    <Box
+      color={"#2C344C"}
+      py={7}
+      position={"sticky"}
+      top={"0"}
+      fontFamily={"Cabin"}
+    >
       <HStack px={"5%"} justifyContent={"space-between"}>
-        <Heading fontFamily={"Cabin"} fontSize={"45px"}>LegaSum</Heading>
+        <Heading fontFamily={"Cabin"} fontSize={"45px"}>
+          LegaSum
+        </Heading>
         <HStack>
           <Button
+            fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
             color={"#2C344C"}
@@ -18,6 +27,7 @@ const NavBar = (): JSX.Element => {
             Home
           </Button>
           <Button
+            fontFamily={"Cabin"}
             fontSize={"18px"}
             colorScheme={"white"}
             color={"#2C344C"}
@@ -26,6 +36,7 @@ const NavBar = (): JSX.Element => {
             About Us
           </Button>
           <Button
+            fontFamily={"Cabin"}
             fontSize={"18px"}
             borderRadius={"25px"}
             backgroundColor={"#EECC6E"}
@@ -38,12 +49,22 @@ const NavBar = (): JSX.Element => {
 
       <HStack justifyContent={"space-between"} paddingLeft={"5%"} mt={20}>
         <VStack alignItems={"flex-start"} spacing={0}>
-          <Heading fontSize={"60px"}>Simplifying</Heading>
-          <Heading fontSize={"60px"}>Complex Legislation</Heading>
-          <Text fontSize={"20px"} paddingTop={"10px"} paddingBottom={"40px"}>
+          <Heading fontFamily={"Cabin"} fontSize={"60px"}>
+            Simplifying
+          </Heading>
+          <Heading fontFamily={"Cabin"} fontSize={"60px"}>
+            Complex Legislation
+          </Heading>
+          <Text
+            fontFamily={"Cabin"}
+            fontSize={"20px"}
+            paddingTop={"10px"}
+            paddingBottom={"40px"}
+          >
             “Making sense of the legal jargon, one summary at a time.”
           </Text>
           <Button
+            fontFamily={"Cabin"}
             py={"25px"}
             px={"40px"}
             fontSize={"20px"}
@@ -223,19 +244,35 @@ const NavBar = (): JSX.Element => {
       </HStack>
 
       <HStack
-          marginTop={"100px"}
+        marginTop={"100px"}
         w={"100%"}
         h={"600px"}
         bg={"#2C344C"}
         justifyContent={"center"}
         alignItems={"center"}
-        >
+      >
         <VStack>
-          <Heading marginTop= {"-100px"} marginBottom={"30px"}color={"white"} fontSize={"55px"}>About Us</Heading>
-          <Text color={"white"} px={"25%"} fontSize={"30px"}>We simplify complex legislation documents to make them easy to understand. Our team of experts provide clear summaries to keep you informed. We strive to bring transparency to the legal system for all.
-            Try our user-friendly tool today and stay informed!
+          <Heading
+            fontFamily={"Cabin"}
+            marginTop={"-100px"}
+            marginBottom={"30px"}
+            color={"white"}
+            fontSize={"55px"}
+          >
+            About Us
+          </Heading>
+          <Text
+            fontFamily={"Cabin"}
+            color={"white"}
+            px={"25%"}
+            fontSize={"30px"}
+          >
+            We simplify complex legislation documents to make them easy to
+            understand. Our team of experts provide clear summaries to keep you
+            informed. We strive to bring transparency to the legal system for
+            all. Try our user-friendly tool today and stay informed!
           </Text>
-          </VStack>
+        </VStack>
       </HStack>
     </Box>
   );
