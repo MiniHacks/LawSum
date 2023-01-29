@@ -1,8 +1,6 @@
 import { Box, Button, Heading, HStack, VStack, Text, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { NextPage } from "next";
-
-
 const NavBar = (): JSX.Element => {
   return (
     <Box
@@ -55,6 +53,18 @@ const NavBar = (): JSX.Element => {
 };
 
 const Home: NextPage = () => {
+  const [file, setFile] = useState<File | null>(null);
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFile(event.target.files?.[0]);
+  };
+
+  const handleSubmit = async () => {
+    if (!file) return;
+    // perform your upload logic here with the file
+    const formData = new FormData();
+    formData.append("file", file!);
+  };
   return (
     <Box>
       <NavBar />
@@ -74,20 +84,21 @@ const Home: NextPage = () => {
           >
             “Making sense of the legal jargon, one summary at a time.”
           </Text>
-            <Button
-                variant={"solid"}
-                fontFamily={"Cabin"}
-                fontSize={"18px"}
-                colorScheme={"white"}
-                color={"#2C344C"}
-                borderRadius={"25px"}
-                backgroundColor={"#EECC6E"}
-                px = {10}
-                py = {5}
-                onClick={() => window.open("https://localhost:3000/texteditor")}
-                >
-              Upload
-            </Button>
+          <Input
+              type="file"
+              onChange={handleFileUpload}
+              appearance="none"
+              width="200px"
+              height="50px"
+              border="1px solid #EECC6E"
+              borderRadius="25px"
+              padding="0.5rem"
+              fontFamily="Cabin"
+              fontSize="18px"
+              color="#2C344C"
+              backgroundColor="#EECC6E"
+          />
+          <Button onClick={handleSubmit}>Submit</Button>
         </VStack>
         <VStack justifyContent={"center"}>
           <svg
