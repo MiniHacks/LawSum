@@ -1,51 +1,18 @@
-# Geese: The Hackathon In A Box
+![Site photo](/Screenshot_5.png)
+## Minnehack 2023
+Brandon, Ansh, Stuti, Brandon
+## Inspiration
+A friend of ours told us about how his mom was sued by the state because she filled out a contract wrong. Contracts can become long and tedious to read which makes it easy to miss important information. We want to make sure people don't miss the key details of their contract and also educate them about laws that pertain to the contract.
+## What it does
+LegaSum takes in a PDF of a contract and will return 5 of the most important points of your contract. This part will normally be general information pertaining to the document and then we will also give 3 laws and descriptions that relate most.
+## How we built it
+Frontend: Next.js, React, TypeScript, Chakra UI
 
-This is a boilerplate that we often use for our hackathons. Feel free to use this however you wish! 
-
-It has no functionality, just allows us to get up and running to work on the actually interesting bits.
-
-No need to credit us if you use this for your own projects, but please make any PRs for any improvements :P
-
-Run this with the [GitHub CLI](https://cli.github.com/) and [Caddy](https://caddyserver.com/):
-
-```bash
-
-gh repo create -p https://github.com/minihacks/geese --clone --public [name] 
-
-# after cloning, make sure you have dependencies installed
-cp .env.example .env
-yarn install
-
-# then, run the project:
-yarn dev
-```
-<details>
-<summary>If you have a team</summary>
-
-You can add it to a team directly by replacing `minihacks/geese` with your team/project name below:
-```bash
-gh repo create -p https://github.com/minihacks/geese --clone --private minihacks/geese
-```
-
-To make the repo public, you can run
-```bash
-gh repo edit --visibility public 
-```
-</details>
-
-
-
-## Parts
-- Infrastructure
-  - [x] Replace NGINX with Caddy
-  - [x] Shared Directory
-  - [x] Yarn workspaces
-- Frontend
-  - [X] Latest NextJS Version
-  - [x] NextAuth
-- Backend 
-  - [X] SocketIO
-- Python
-  - [x] FastAPI
-- MongoDB
-  - [ ] MongoDB
+Backend: Flask, Python, OpenAI
+## Challenges we ran into
+Frontend: Making the upload button was much harder than expected and handling the PDF file was rather difficult.
+Backend: This was the first time any of us had to merge a frontend and backend together. Since we used two frameworks, merging came to be a pretty big issue at first and it was also our first time creating RESTful API's.
+## Accomplishments that we're proud of
+During the middle of the hackathon, all of us spent 3-4 hours reading documentation and trying to figure out the next steps but ended up making no progress. Motivation was low, but we decided to stick it out and now we have a finished product!
+## What's next for LegaSum
+For safety purposes in the future, since people will literally be uploading their contracts. If they weren't anonymized that could be a security issue so we want to find ways to encrypt contracts. 
