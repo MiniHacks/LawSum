@@ -51,7 +51,6 @@ const NavBar = (): JSX.Element => {
             backgroundColor={"#EECC6E"}
             color={"#2C344C"}
             colorScheme={"yellow"}
-            variant={"solid"}
           >
             <a href={"#mailing-list"}>Mailing List</a>
           </Button>
